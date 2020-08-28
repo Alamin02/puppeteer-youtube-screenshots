@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const puppeteer = require('puppeteer-extra');
 const AdblockerPlugin = require('puppeteer-extra-plugin-adblocker');
-const os = require('os');
+// const os = require('os');
 
 const adBlocker = AdblockerPlugin({
     blockTrackers: true, // default: false
@@ -14,10 +14,10 @@ const urls = [
     ...new Set(fs.readFileSync(urlFilePath).toString().trim().split("\n")),
 ];
 
-setInterval(() => {
-    console.log('Free Memory: ', os.freemem());
-    console.log('Total Memory: ',os.totalmem());
-}, 10000);
+// setInterval(() => {
+//     console.log('Free Memory: ', os.freemem());
+//     console.log('Total Memory: ',os.totalmem());
+// }, 10000);
 
 async function runner() {
     // Initial Chrome setup and run puppeteer
